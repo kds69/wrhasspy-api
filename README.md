@@ -10,5 +10,5 @@ The /openai can be used for app that are developped to query openai api (for ins
 Run below docker:
 
 ``
-docker run -d -p 5000:5000 --restart unless-stopped --name rhasspy-api rhasspy-api
+docker run -d -p 5000:5000 --restart unless-stopped --name wrhasspy-api wrhasspy-api
 ``
