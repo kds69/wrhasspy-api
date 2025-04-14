@@ -5,10 +5,11 @@ A fastapi webui is available for testing at your server docker address + /docs: 
 This will allow you to test, but more importantly to check json structure required by the api.
 
 Direct transcription services and Openai api-like are available at /transcript and /openai respectively.
+The /transcript path will connect to rhasspy service specified server address/port.
 The /openai path is to be used for app that are developped to request openai api transcript service for any mp3 file (for instance for nextcloud, using a proxy manager to do both: enable https and redirect openai/v1/transcript queries to corresponding path http://192.168.x.x:5000/openai).
 
 Run below docker:
 
 ``
-docker run -d -p 5000:5000 --restart unless-stopped --name wrhasspy-api wrhasspy-api
+docker run -d -p 5000:5000 --restart unless-stopped --name wrhasspy-api wrhasspy-api --env RHASSPY_HOST=192,168.x.y RHASSPY_PORT=10300
 ``
