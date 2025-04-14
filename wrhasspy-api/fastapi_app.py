@@ -13,7 +13,7 @@ app = FastAPI()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-ASYNCTCPSERVER_HOST = "192.168.140.236"
+ASYNCTCPSERVER_HOST = "192.168.x.y"
 ASYNCTCPSERVER_PORT = "10300"
 
 SAMPLE_RATE = 16000
