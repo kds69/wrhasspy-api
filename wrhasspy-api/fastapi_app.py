@@ -13,8 +13,8 @@ app = FastAPI()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-ASYNCTCPSERVER_HOST = "192.168.x.y"
-ASYNCTCPSERVER_PORT = "10300"
+#ASYNCTCPSERVER_HOST = "192.168.x.y"
+#ASYNCTCPSERVER_PORT = "10300"
 
 SAMPLE_RATE = 16000
 SAMPLE_WIDTH = 2
@@ -37,7 +37,9 @@ async def async_process_audio_stream( audio_data ):
 	"""Process an audio stream to STT service."""
 	try:
 		logging.info("try connection AsyncTcpClient")
-		async with AsyncTcpClient(ASYNCTCPSERVER_HOST, ASYNCTCPSERVER_PORT) as client:
+		AsyncTcpServerHost = os.environ.get("RHASSPY_HOST")
+		AsyncTcpServerPort = os.environ.get("RHASSPY_PORT")
+		async with AsyncTcpClient(AsyncTcpServerHost, AsyncTcpServerPort) as client:
 			logging.info("connection AsyncTcpClient OK")
 			# Set transcription language
 			#await client.write_event(Transcribe(language="fr").event())
