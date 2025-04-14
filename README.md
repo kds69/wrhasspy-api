@@ -1,7 +1,7 @@
 # wrhasspy-api
 Docker api for rhasspy/wyoming-faster-whisper.
 
-A fastapi webui is available for testing at your server docker address + /docs: http://192.168.x.x/docs
+A fastapi webui is available for testing at your server docker address + /docs: http://192.168.x.x:5000/docs
 This will allow you to test, but more importantly to check json structure.
 
 Direct transcriptions services and Openai api-like are available at /transcripts and /openai respectively.
